@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../CSS/globel.css">
-    <link rel="stylesheet" href="../CSS/notebook.css">
 </head>
 <body>
-<div id="notebook">
+<div v-cloak id="notebook">
     <div id="input">
         <input id="articleName" name="articleName" type="text" v-model="storageName" placeholder="输入文章标题">
         <textarea id="artcileContent" name="articleContent" v-model="storageContent" maxlength="200"></textarea>

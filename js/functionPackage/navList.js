@@ -27,7 +27,7 @@ var leftNav = new Vue({
             },{
                 name:'文章删选',
                 sonNum:1,
-                src:'',
+                src:'test.html',
                 click:false
             }
         ],
