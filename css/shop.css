@@ -1,0 +1,78 @@
+gray{
+    color: gray;
+}
+
+body{
+    width: 100%;
+}
+
+#goods,#car,#pay{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.singleGoodBlock{
+    width: 10%;
+    height: auto;
+    padding: 5px;
+    margin: 0 10px;
+}
+
+#addGoods,#subGoods,#clearSingleGood,#clearAll,#buy{
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 10px;
+}
+
+#clearSingleGood{
+    margin-top: 10px;
+}
+
+.goodsImg{
+    width: 100%;
+    height: 0;
+    margin-bottom: 120%;
+}
+
+.goodsImg img{
+    border-radius: 5px;
+}
+
+#addGoods,#buy{
+    background: orangered;
+    color: #ffffff;
+    border: 0px;
+}
+
+.goodPrice,.goodStock{
+    font-size: 12px;
+    float: left;
+}
+
+.goodName{
+    font-weight: bold;
+}
+
+.singleGoodCar{
+    width: 300px;
+    height: auto;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    color: #ffffff;
+}
+
+#operate{
+    padding: 10px;
+    width: 20%;
+}
+
+#onceNum{
+    width: 30px;
+    height: 20px;
+    outline: none;
+    border: 1px solid #b5c0d6;
+}

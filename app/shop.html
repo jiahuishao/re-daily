@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../CSS/globel.css">
+    <link rel="stylesheet" href="../CSS/shop.css">
+</head>
+<body>
+<div id="shopCar">
+    <div id="goods">
+        <div class="singleGoodBlock" v-for="good in goods">
+            <div class="goodsImg">
+                <img src="../IMAGE/timg-pxz02.jpeg" width="100%">
+            </div>
+            <div class="goodName">{{ good.name }}</div>
+            <div>
+                <div class="goodPrice">售价:{{ good.price }}￥</div>
+                <div class="goodPrice">库存:{{ good.stock }}￥</div>
+            </div><br>
+            <input id="onceNum" type="number" v-model.number="good.addNum">
+            <button id="addGoods" v-on:click="addGoods(good)">添加</button>
+            <button id="subGoods" v-on:click="subGoods(good)">减去</button>
+        </div>
+    </div>
+    <div id="car">
+        <div class="singleGoodCar" v-for="inCar in goods" v-if="inCar.inCar != 0">
+            <h5>{{ inCar.name }} * {{ inCar.inCar }}</h5>
+            <h6>总价:{{ inCar.inCar * inCar.price }}￥</h6>
+            <button id="clearSingleGood" v-on:click="clean(inCar)">清空该商品</button>
+        </div>
+    </div>
+    <div id="pay">
+        <div id="operate">
+            <button id="buy">购买</button>
+            <button id="clearAll" v-on:click="clearAll()">清空</button>
+            总价:{{ sum }}￥
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="mainShop.js"></script>
+</body>
+</html>

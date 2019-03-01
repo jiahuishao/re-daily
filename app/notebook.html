@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../CSS/globel.css">
+    <link rel="stylesheet" href="../CSS/notebook.css">
+</head>
+<body>
+<div id="notebook">
+    <div id="input">
+        <input id="articleName" name="articleName" type="text" v-model="storageName" placeholder="输入文章标题">
+        <textarea id="artcileContent" name="articleContent" v-model="storageContent" maxlength="200"></textarea>
+        <div id="fontNum">剩余{{ fontNum() }}字可以输入</div>
+        <button id="addArticle" @click="addArticle()">add</button>
+    </div>
+    <div id="histroy">
+        <div class="histroyFa">
+            <div class="histroyBlock" v-cloak v-for="article in article" v-if="article.sit == 'right'">
+                <h5 v-on:click="article.show = !article.show">
+                    {{ article.name }} {{ article.time }}
+                    <i v-show="!article.show">+</i>
+                    <i v-show="article.show">-</i>
+                </h5>
+                <transition name="ul">
+                    <div v-if="article.show" class="ul-box">
+                        <p>{{ article.content }}</p>
+                    </div>
+                </transition>
+            </div>
+        </div>
+        <div class="histroyFa">
+            <div class="histroyBlock" v-cloak v-for="article in article" v-if="article.sit == 'left'">
+                <h5 v-on:click="article.show = !article.show">
+                    {{ article.name }} {{ article.time }}
+                    <i v-show="!article.show">+</i>
+                    <i v-show="article.show">-</i>
+                </h5>
+                <transition name="ul">
+                    <div v-if="article.show" class="ul-box">
+                        <p>{{ article.content }}</p>
+                    </div>
+                </transition>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="mainNoteBook.js"></script>
+</body>
+</html>

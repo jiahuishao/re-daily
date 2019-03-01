@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue小功能合集</title>
+</head>
+<body>
+<div id="topNav"></div>
+<div id="body">
+    <div id="leftNav">
+        <ul>
+            <li v-cloak v-for="faNav in faNav" v-on:click="faNav.display = !faNav.display">
+                {{ faNav.name }}<i v-if="!faNav.display">   +</i><i v-if="faNav.display">   -</i>
+                <ul @click.stop>
+                    <li
+                            v-for="sonNav in sonNav"
+                            v-if="sonNav.sonNum == faNav.faNum && faNav.display"
+                            v-on:click="onActive(sonNav)"
+                            v-bind:class="{'active':sonNav.click}">
+                        {{ sonNav.name }}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="main">
+        <iframe id="frame" src="notebook.html" frameborder="0"></iframe>
+    </div>
+</div>
+<script src="mainNavList.js"></script>
+</body>
+</html>
