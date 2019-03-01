@@ -13,6 +13,7 @@ var shopCar = new Vue({
                 inCar:0,
                 allP:0,
                 addNum:1,
+                img:'../image/timg-pxz02.jpeg'
             },
             {
                 name:'芝士蛋糕',
@@ -22,6 +23,7 @@ var shopCar = new Vue({
                 inCar:0,
                 allP:0,
                 addNum:1,
+                img:'../image/timg-pxz02.jpeg'
             },
             {
                 name:'大理石面包',
@@ -31,6 +33,7 @@ var shopCar = new Vue({
                 inCar:0,
                 allP:0,
                 addNum:1,
+                img:'../image/timg-pxz02.jpeg'
             },
             {
                 name:'macbook Pro',
@@ -40,6 +43,7 @@ var shopCar = new Vue({
                 inCar:0,
                 allP:0,
                 addNum:1,
+                img:'../image/timg-pxz02.jpeg'
             },
             {
                 name:'猪肉脯',
@@ -49,6 +53,7 @@ var shopCar = new Vue({
                 inCar:0,
                 allP:0,
                 addNum:1,
+                img:'../image/timg-pxz02.jpeg'
             },
             {
                 name:'餐巾纸',
@@ -58,6 +63,7 @@ var shopCar = new Vue({
                 inCar:0,
                 allP:0,
                 addNum:1,
+                img:'../image/timg-pxz02.jpeg'
             },
         ],
         sumPrice:0,

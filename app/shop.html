@@ -9,7 +9,7 @@
     <div id="goods">
         <div class="singleGoodBlock" v-for="good in goods">
             <div class="goodsImg">
-                <img src="../IMAGE/timg-pxz02.jpeg" width="100%">
+                <img v-bind:src="good.img" width="100%">
             </div>
             <div class="goodName">{{ good.name }}</div>
             <div>

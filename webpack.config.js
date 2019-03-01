@@ -39,6 +39,22 @@ module.exports = {
                         loader: "css-loader",
                     }
                 ]
+            },
+            {
+                test: /\.html$/,
+                use: {
+                    loader: 'html-loader'
+                }
+            },
+            {
+                test:/\.(png|jpg|jpeg)$/,
+                use: {
+                    loader: "url-loader",
+                    options: {
+                        name:'image/[name].[hash].[ext]',
+                        pulbicPath:'./'
+                    }
+                }
             }
         ]
     },
