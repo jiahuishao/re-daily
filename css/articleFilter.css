@@ -1,0 +1,60 @@
+.articleFilter{
+    padding: 15px;
+}
+
+.labelContainer{
+    display: flex;
+    justify-content: left;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.labelBlock{
+    padding: 5px 15px;
+    margin: 0 5px;
+    border-radius: 15px;
+    border: 1px solid cornflowerblue;
+    background-color: #fff;
+    color: cornflowerblue;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.labelBlockadd{
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+.active{
+    border: 1px solid cornflowerblue;
+    color: #fff;
+    background-color: cornflowerblue;
+}
+
+.articlePart{
+    margin-top: 30px;
+}
+
+.article{
+    width: 49%;
+    margin: 10px auto;
+    padding: 15px;
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.articleLabel{
+    float: right;
+    font-size: 10px;
+    color: cornflowerblue;
+    font-weight: lighter;
+}
+
+.articleContent{
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #333333;
+}
