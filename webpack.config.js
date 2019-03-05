@@ -7,6 +7,7 @@ module.exports = {
         mainNoteBook:__dirname + "/js/mainNoteBook.js",
         mainShop:__dirname + "/js/mainShop.js",
         mainArticleFilter:__dirname + "/js/mainArticleFilter.js",
+        mainSelectTrueAnswer:__dirname + "/js/mainSelectTrueAnswer.js",
     },
     output: {                           //出口文件
         path: __dirname + "/app",

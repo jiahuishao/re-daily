@@ -29,6 +29,11 @@ var leftNav = new Vue({
                 sonNum:1,
                 src:'test.html',
                 click:false
+            },{
+                name:'选择答案',
+                sonNum:1,
+                src:'selectTrueAnswer.html',
+                click:false
             }
         ],
         active:1
