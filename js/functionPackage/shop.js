@@ -1,71 +1,12 @@
 import Vue from 'vue'
+import {shopCar as sc} from "../dataSave/dataSave";
 
+'../dataSave/dataSave.js'
 //购物车
 var shopCar = new Vue({
     el:'#shopCar',
     data:{
-        goods:[
-            {
-                name:'330ml红罐可乐',
-                price:3.0,
-                stock:100,
-                id:'000001',
-                inCar:0,
-                allP:0,
-                addNum:1,
-                img:require('../../image/timg-pxz02.jpeg')
-            },
-            {
-                name:'芝士蛋糕',
-                price:28.0,
-                stock:50,
-                id:'000002',
-                inCar:0,
-                allP:0,
-                addNum:1,
-                img:require('../../image/timg-pxz02.jpeg')
-            },
-            {
-                name:'大理石面包',
-                price:10.0,
-                stock:200,
-                id:'000003',
-                inCar:0,
-                allP:0,
-                addNum:1,
-                img:require('../../image/timg-pxz02.jpeg')
-            },
-            {
-                name:'macbook Pro',
-                price:18888.0,
-                stock:5,
-                id:'000004',
-                inCar:0,
-                allP:0,
-                addNum:1,
-                img:require('../../image/timg-pxz02.jpeg')
-            },
-            {
-                name:'猪肉脯',
-                price:5.0,
-                stock:500,
-                id:'000005',
-                inCar:0,
-                allP:0,
-                addNum:1,
-                img:require('../../image/timg-pxz02.jpeg')
-            },
-            {
-                name:'餐巾纸',
-                price:2.0,
-                stock:2000,
-                id:'000006',
-                inCar:0,
-                allP:0,
-                addNum:1,
-                img:require('../../image/timg-pxz02.jpeg')
-            },
-        ],
+        goods:sc,
         sumPrice:0,
     },
     methods:{

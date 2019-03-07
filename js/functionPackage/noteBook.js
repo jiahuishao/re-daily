@@ -1,27 +1,13 @@
 
 import Vue from 'vue';
-
+import {notebook as nb} from '../dataSave/dataSave.js'
 var lastSit = 'left';
 
 //记事本
 var notebook = new Vue({
     el:'#notebook',
     data:{
-        article:[
-            {
-                name:'这里是笔记名称',
-                content:'这是里笔记内容',
-                time:'0000年0月0号0点00分',
-                sit:'left',
-                show:false,
-            },{
-                name:'万叶集',
-                content:'鸣神の少しとよみてさし昙り雨も降らんか君を留めん 鸣神の少しとよみて降らずとも我は止まらん妹し留めば',
-                time:"0000年0月0号0点00分",
-                sit:'right',
-                show:false,
-            }
-        ],
+        article:nb,
         storageName:'',
         storageContent:'',
         leftColNum:0,

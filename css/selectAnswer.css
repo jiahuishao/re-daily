@@ -1,4 +1,49 @@
+.questionGroup{
+    width: 40%;
+    margin: 10px auto;
+}
+
+.question{
+    padding: 4px 10px;
+    font-size: 18px;
+    color: #2f4059;
+}
+
+.qlabel{
+    height: 100%;
+    padding: 5px;
+    font-size: 12px;
+    color: cornflowerblue;
+}
+
+.answer{
+    padding: 4px 0 4px 20px ;
+    font-size: 14px;
+}
+
+.answer li{
+    width: 90%;
+    margin: 4px auto 0 auto;
+    padding: 2px;
+    border: 1px solid transparent;
+}
+
 .select{
     color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid cornflowerblue!important;
     background-color: cornflowerblue;
+}
+
+.submit{
+    width: 40%;
+    height: 30px;
+    display: block;
+    margin: 10px auto;
+    background-color: orangered;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
 }
