@@ -17,6 +17,7 @@
     "css-loader": "^2.1.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-loader": "^0.5.5",
+    "jquery": "^3.3.1",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "vue": "^2.6.7",
@@ -25,5 +26,8 @@
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "expose-loader": "^0.7.5"
   }
 }

@@ -8,6 +8,7 @@ module.exports = {
         mainShop:__dirname + "/js/mainShop.js",
         mainArticleFilter:__dirname + "/js/mainArticleFilter.js",
         mainSelectTrueAnswer:__dirname + "/js/mainSelectTrueAnswer.js",
+        mainStoreGame:__dirname + "/js/mainStoreGame.js",
     },
     output: {                           //出口文件
         path: __dirname + "/app",
@@ -56,7 +57,7 @@ module.exports = {
                         pulbicPath:'./'
                     }
                 }
-            }
+            },
         ]
     },
     plugins: [
@@ -64,7 +65,8 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            'vue$':'vue/dist/vue.js'
+            'vue$':'vue/dist/vue.js',
+            'jquery':'jquery/dist/jquery.min.js'
         }
     },
     devServer: {
