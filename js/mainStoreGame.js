@@ -1,4 +1,7 @@
 import $ from 'jquery'
+import Vue from 'vue'
+import ccf from '../js/components/compCommFather.vue'
+import ccs from '../js/components/compCommSon.vue'
 
 var BaseMoney = 10000;
 var pulsMoney = 10;
@@ -22,3 +25,8 @@ document.getElementById('buy').onclick = function () {
     pulsMoney += 100;
     return pulsMoney;
 }
+
+var comm = new Vue({
+    el:'#comm',
+    components:{ccf}
+})
