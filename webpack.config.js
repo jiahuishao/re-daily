@@ -9,6 +9,7 @@ module.exports = {
         mainArticleFilter:__dirname + "/js/mainArticleFilter.js",
         mainSelectTrueAnswer:__dirname + "/js/mainSelectTrueAnswer.js",
         mainStoreGame:__dirname + "/js/mainStoreGame.js",
+        mainSinglePage:__dirname + "/js/mainSinglePage.js",
     },
     output: {                           //出口文件
         path: __dirname + "/app",

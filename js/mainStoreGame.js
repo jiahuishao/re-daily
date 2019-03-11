@@ -2,6 +2,7 @@ import $ from 'jquery'
 import Vue from 'vue'
 import ccf from '../js/components/compCommFather.vue'
 import ccs from '../js/components/compCommSon.vue'
+import af from '../js/components/articleFilter.vue'
 
 var BaseMoney = 10000;
 var pulsMoney = 10;
@@ -28,5 +29,13 @@ document.getElementById('buy').onclick = function () {
 
 var comm = new Vue({
     el:'#comm',
-    components:{ccf}
+    data:{
+      acomp:'af'
+    },
+    components:{ccf,af},
+    methods:{
+        changeB(){
+            this.acomp = 'ccf'
+        }
+    }
 })

@@ -8,7 +8,9 @@
 <div id="youMoney"></div>
 <button id="buy">buy</button>
 <div id="comm">
-<ccf></ccf>
+    <component v-bind:is="acomp"></component>
+    <ccf></ccf>
+    <button @click="changeB()">click me</button>
 </div>
 <script src="mainStoreGame.js"></script>
 </body>
