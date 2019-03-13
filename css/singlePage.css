@@ -1,0 +1,9 @@
+.tabGroup{
+    display: flex;
+    flex-wrap: wrap;
+}
+.tab{
+    padding: 5px 10px;
+    float: left;
+    cursor: pointer;
+}
