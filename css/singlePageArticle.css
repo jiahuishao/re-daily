@@ -1,17 +1,28 @@
 .articleBlock{
-    margin: 10px auto;
-    padding: 10px 0;
+    margin: 5px auto;
+    padding: 5px;
     border-bottom: 1px solid #333333;
-    width: 60%;
 }
 .name{
     font-size: 18px;
 }
-.remark{
+.bookMessage{
+    display: flex;
+    flex-wrap: wrap;
+}
+.remark,.author{
     font-size: 12px;
     color: #333333;
+    display: block;
+    padding: 5px 5px 5px 0;
 }
 .content{
+    width: 100%;
     font-size: 14px;
+    font-weight: normal;
+    color: #333333;
     padding: 10px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
