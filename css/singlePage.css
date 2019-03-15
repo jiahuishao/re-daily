@@ -1,3 +1,12 @@
+*{
+    /*border: 1px solid #000000;*/
+}
+.con{
+    padding: 5px 5px 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .user{
     width: 40%;
     height: auto;
@@ -10,14 +19,22 @@
     border: 1px solid #000000;
     border-radius: 50%;
 }
-.tabGroup{
-    width: 15%;
-    position: fixed;
-    left: 10%;
+.tabGroup,.adv{
+    width: 200px;
+    min-height: 200px;
+    max-height: 200px;
     display: flex;
-    padding-top: 10px;
+    padding: 10px;
     flex-wrap: wrap;
     flex-direction: column;
+    box-shadow: 0px 0px 2px #333333;
+}
+.tabGroup{
+    position: fixed;
+}
+.help{
+    width: 200px;
+    height: 200px;
 }
 .tab{
     width: 100%;
@@ -26,7 +43,11 @@
     cursor: pointer;
     text-align: center;
 }
+.tab:not(:last-child){
+    border-bottom: 1px solid #333333;
+}
 .main{
     width: 60%;
-    margin: 0 auto;
+    margin: 0 5px;
+    box-shadow: 0px 0px 2px #333333;
 }

@@ -1,35 +1,40 @@
 <template>
-    <div>
+    <div class="con">
+        <div class="help">
         <div class="tabGroup">
-            <div class="tab" v-on:click="changeComp('singlePageArticle')">
-                <ruby>
-                    {{ commData[0].length }}
-                    <rt>日本文学</rt>
-                </ruby>
-            </div>
-            <div class="tab" v-on:click="changeComp('singlePageFans')">
-                <ruby>
-                    {{ commData[1].length }}
-                    <rt>粉丝数量</rt>
-                </ruby>
-            </div>
-            <div class="tab" v-on:click="changeComp('singlePageFans')">
-                <ruby>
-                    {{ commData[1].length }}
-                    <rt>文章评论</rt>
-                </ruby>
-            </div>
-            <div class="tab" v-on:click="changeComp('singlePageFans')">
-                <ruby>
-                    {{ commData[1].length }}
-                    <rt>喜欢文章</rt>
-                </ruby>
-            </div>
+                <div class="tab" v-on:click="changeComp('singlePageArticle')">
+                    <ruby>
+                        {{ commData[0].length }}
+                        <rt>日本文学</rt>
+                    </ruby>
+                </div>
+                <div class="tab" v-on:click="changeComp('singlePageFans')">
+                    <ruby>
+                        {{ commData[1].length }}
+                        <rt>粉丝数量</rt>
+                    </ruby>
+                </div>
+                <div class="tab" v-on:click="changeComp('singlePageFans')">
+                    <ruby>
+                        {{ commData[1].length }}
+                        <rt>文章评论</rt>
+                    </ruby>
+                </div>
+                <div class="tab" v-on:click="changeComp('singlePageFans')">
+                    <ruby>
+                        {{ commData[1].length }}
+                        <rt>喜欢文章</rt>
+                    </ruby>
+                </div>
+        </div>
         </div>
         <div class="main">
             <keep-alive>
                 <component v-bind:is="showComp" :data="commData"></component>
             </keep-alive>
+        </div>
+        <div class="adv">
+
         </div>
     </div>
 </template>
