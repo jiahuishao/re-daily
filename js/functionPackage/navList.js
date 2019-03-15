@@ -34,6 +34,11 @@ var leftNav = new Vue({
                 sonNum:1,
                 src:'selectTrueAnswer.html',
                 click:false
+            },{
+                name:'组件动态切换',
+                sonNum:1,
+                src:'singlePage.html',
+                click:false
             }
         ],
         active:1
