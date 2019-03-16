@@ -26,3 +26,20 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+.scroll-enter-active{
+    animation: scroll .5s;
+}
+
+.scroll-leave-active{
+    animation: scroll 1s reverse;
+}
+
+@keyframes scroll {
+    0% {
+        height: 300px;
+    }
+    100% {
+        height: 0;
+    }
+}

@@ -39,6 +39,11 @@ var leftNav = new Vue({
                 sonNum:1,
                 src:'singlePage.html',
                 click:false
+            },{
+                name:'动画练手',
+                sonNum:1,
+                src:'animatePratice.html',
+                click:false
             }
         ],
         active:1

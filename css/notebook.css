@@ -112,4 +112,5 @@
 .ul-enter,
 .ul-leave-to {
     height: 0;
+    padding: 0;
 }

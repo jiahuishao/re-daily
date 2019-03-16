@@ -33,9 +33,7 @@
                 <component v-bind:is="showComp" :data="commData"></component>
             </keep-alive>
         </div>
-        <div class="adv">
 
-        </div>
     </div>
 </template>
 
