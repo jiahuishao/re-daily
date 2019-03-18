@@ -11,6 +11,7 @@ module.exports = {
         mainStoreGame:__dirname + "/js/mainStoreGame.js",
         mainSinglePage:__dirname + "/js/mainSinglePage.js",
         mainAnimatePratice:__dirname + "/js/mainAnimatePratice.js",
+        mainNewLabel:__dirname + "/js/mainNewLabel.js",
     },
     output: {                           //出口文件
         path: __dirname + "/app",
