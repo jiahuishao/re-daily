@@ -5,9 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-<div id="newLabelContainer">
-    <new-label></new-label>
-</div>
+
+<div id="sjh"></div>
 <script src="mainNewLabel.js"></script>
+<script>
+    document.getElementById('sjh').addEventListener('click',function () {
+        if(document.getElementById('sjh').classList.contains('ani')){
+            document.getElementById('sjh').classList.remove('ani')
+        }
+        setTimeout(function () {
+            document.getElementById('sjh').classList.add('ani');
+        },1)
+    })
+</script>
 </body>
 </html>

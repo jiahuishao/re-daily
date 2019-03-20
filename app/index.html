@@ -16,11 +16,11 @@ SHAOJIAHUI
         <ul>
             <li v-cloak v-for="faNav in faNav" v-on:click="faNav.display = !faNav.display">
                 {{ faNav.name }}<i v-if="!faNav.display">   +</i><i v-if="faNav.display">   -</i>
-                <ul @click.stop>
+                <ul @click.stop class="sonNav">
                     <li
                             v-for="sonNav in sonNav"
                             v-if="sonNav.sonNum == faNav.faNum && faNav.display"
-                            v-on:click="onActive(sonNav)"
+                            v-on:click="onActive(sonNav,$event)"
                             v-bind:class="{'active':sonNav.click}">
                         {{ sonNav.name }}
                     </li>

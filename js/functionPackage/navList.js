@@ -49,14 +49,25 @@ var leftNav = new Vue({
         active:1
     },
     methods:{
-        onActive(ch) {
-            console.log("1");
+        onActive(ch,event) {
             const sonnav = this.sonNav;
             for(var i = 0;i < sonnav.length;i++){
                 sonnav[i].click = false
             }
             document.getElementById('frame').src = ch.src;
             ch.click = !ch.click;
+            let left = event.offsetX;
+            let top = event.offsetY;
+            let div = event.currentTarget;
+            if(Boolean(div.querySelector("div") == false)){
+                div.removeChild(div.childNodes[1])
+            }
+            div.appendChild(document.createElement("div"));
+            div.childNodes[1].style.cssText = "top:" + top + "px;" + "left:" + left + "px;"
+            div.childNodes[1].classList.add('test');
+            setTimeout(function () {
+                div.removeChild(div.childNodes[1])
+            },600)
         },
     }
 })

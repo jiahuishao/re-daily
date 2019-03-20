@@ -1,5 +1,7 @@
 <template>
-    <div class="pos" v-on:touchmove="vueTouch" v-on:touchstart="vueToucha" v-on:click="change">sssss</div>
+    <div class="pos" v-on:touchmove="vueTouch" v-on:touchstart="vueToucha">
+        <div id="sjh" class="clickBlock" v-on:click="change"></div>
+    </div>
 </template>
 
 <script>
@@ -18,6 +20,7 @@
             return {
                 a:0,
                 b:0,
+                tf:false,
             }
         },
         methods:{
@@ -28,13 +31,11 @@
                 console.log(this.a);
             },
             vueTouch(e){
-                let pa = (e.touches[0].clientY - this.a);
-                let pb = (e.touches[0].clientX - this.b);
-                document.getElementsByClassName('pos')[0].style.top = pa + 'px';
-                document.getElementsByClassName('pos')[0].style.left = pb + 'px';
+                document.getElementsByClassName('pos')[0].style.top = e.touches[0].clientY + 'px';
+                document.getElementsByClassName('pos')[0].style.left = e.touches[0].clientX + 'px';
             },
-            change(e){
-                document.getElementsByClassName('pos')[0].innerHTML = 'change';
+            change(){
+                document.getElementById('sjh').classList.add('ani')
             }
         }
     }
@@ -45,8 +46,28 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
         background-color: cornflowerblue;
+    }
+    .clickBlock{
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        background-color: orangered;
+        transform: scale(.1);
+        opacity: 1;
+    }
+
+    @keyframes shao {
+        0% {
+            transform: scale(0.1);
+        }
+        100% {
+            transform: scale(1.5);
+        }
+    }
+    .ani{
+        animation: shao 0.5s;
     }
 </style>
