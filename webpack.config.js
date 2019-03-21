@@ -12,6 +12,7 @@ module.exports = {
         mainSinglePage:__dirname + "/js/mainSinglePage.js",
         mainAnimatePratice:__dirname + "/js/mainAnimatePratice.js",
         mainNewLabel:__dirname + "/js/mainNewLabel.js",
+        mainVueRouter:__dirname + "/js/vueRouter.js",
     },
     output: {                           //出口文件
         path: __dirname + "/app",
@@ -69,7 +70,8 @@ module.exports = {
     resolve: {
         alias: {
             'vue$':'vue/dist/vue.js',
-            'jquery':'jquery/dist/jquery.min.js'
+            'jquery':'jquery/dist/jquery.min.js',
+            'vueRouter':'vue-router/dist/vue-router.js'
         }
     },
     devServer: {

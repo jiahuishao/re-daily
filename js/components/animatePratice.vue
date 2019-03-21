@@ -6,7 +6,7 @@
                @keyup="find()"
                v-model="search.value" placeholder="FIND">
 
-        <article v-for="article in article" class="article" v-bind:class="{'ani':article.scroll}"
+        <article v-for="article in article" class="articleani" v-bind:class="{'ani':article.scroll}"
                  @click="click(article)" v-if="article.match">
             <transition name="op">
                 <div class="tru" v-if="article.scroll" key="hello">
@@ -110,7 +110,7 @@
     .con{
         width: 100%;
     }
-    .article{
+    .articleani{
         width: 40%;
         height: 40px;
         margin: -1px auto;
