@@ -13,6 +13,7 @@ module.exports = {
         mainAnimatePratice:__dirname + "/js/mainAnimatePratice.js",
         mainNewLabel:__dirname + "/js/mainNewLabel.js",
         mainVueRouter:__dirname + "/js/vueRouter.js",
+        mainVuex:__dirname + "/js/vuex.js",
     },
     output: {                           //出口文件
         path: __dirname + "/app",
@@ -71,7 +72,8 @@ module.exports = {
         alias: {
             'vue$':'vue/dist/vue.js',
             'jquery':'jquery/dist/jquery.min.js',
-            'vueRouter':'vue-router/dist/vue-router.js'
+            'vueRouter':'vue-router/dist/vue-router.js',
+            'vuex':'vuex/dist/vuex.js'
         }
     },
     devServer: {
