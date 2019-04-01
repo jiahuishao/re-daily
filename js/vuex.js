@@ -8,8 +8,9 @@ const store = new Vuex.Store({
         age:22
     },
     mutations:{
-        increment(state){
-            state.age++
+        increment(state,obj){
+            console.log(typeof obj.todo)
+            state.age += obj.todo
         }
     }
 })
