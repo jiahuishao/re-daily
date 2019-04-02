@@ -65,7 +65,7 @@ const navContainer = new Vue({
     components:{netEasyNav}
 })
 
-router.push('/netEasyNav');
+router.push('/netEasyNav/netEasyFindMusicPush');
 
 
 

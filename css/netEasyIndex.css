@@ -10,12 +10,47 @@ ul,li{
 a{
     text-decoration: none;
 }
-
-nav ul{
-    display: flex;
-    justify-content: space-around;
+nav{
+    background-color: #232323;
 }
-
-nav ul li{
+.search{
+    width: 150px;
+    height: 10px;
+    margin-left: 100px;
+    padding: 10px 15px;
+    border: 0px solid #ffffff;
+    border-radius: 32px;
+    outline: none;
+}
+nav ul{
+    height: 70px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #232323;
+}
+nav ul .ToneNav{
+    text-align: center;
     font-size: 14px;
+    padding: 0 20px;
+}
+nav a{
+    color: #ffffff;
+}
+.creater{
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    border: 1px solid lightgray;
+    background-color: #232323;
+    color: #ffffff;
+    border-radius: 32px;
+    outline: none;
+}
+.login{
+    outline: none;
+    margin-left: 30px;
+    border: 0px solid #232323;
+    background-color: #232323;
+    color: #ffffff;
 }

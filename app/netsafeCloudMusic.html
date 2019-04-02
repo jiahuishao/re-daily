@@ -8,9 +8,12 @@
 <div id="navContainer">
     <nav>
         <ul>
-            <li v-for="navList in $store.state.navList">
+            <li v-for="navList in $store.state.navList" class="ToneNav">
                 <router-link :to="navList.path">{{ navList.navName }}</router-link>
             </li>
+            <input class="search" placeholder="音乐/视频/电台/用户">
+            <button class="creater">创作者中心</button>
+            <button class="login">登录</button>
         </ul>
     </nav>
     <router-view></router-view>
