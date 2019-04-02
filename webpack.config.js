@@ -14,6 +14,7 @@ module.exports = {
         mainNewLabel:__dirname + "/js/mainNewLabel.js",
         mainVueRouter:__dirname + "/js/vueRouter.js",
         mainVuex:__dirname + "/js/vuex.js",
+        mainNetEasy:__dirname + "/js/mainNetEasy.js",
     },
     output: {                           //出口文件
         path: __dirname + "/app",

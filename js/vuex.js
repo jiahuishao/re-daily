@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import vuextestApp from '../js/components/vuextest.vue'
+import vuetestBro from '../js/components/vuextestBrr.vue'
+
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
@@ -9,7 +11,6 @@ const store = new Vuex.Store({
     },
     mutations:{
         increment(state,obj){
-            console.log(typeof obj.todo)
             state.age += obj.todo
         }
     }
@@ -18,5 +19,5 @@ const store = new Vuex.Store({
 const vuextest = new Vue({
     el:'#vuextest',
     store,
-    components:{vuextestApp}
+    components:{vuextestApp,vuetestBro}
 })

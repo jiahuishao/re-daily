@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="navContainer">
+    <nav>
+        <ul>
+            <li v-for="navList in $store.state.navList">
+                <router-link :to="navList.path">{{ navList.navName }}</router-link>
+            </li>
+        </ul>
+    </nav>
+    <router-view></router-view>
+</div>
+<script src="mainNetEasy.js"></script>
+</body>
+</html>
