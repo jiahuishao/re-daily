@@ -2,7 +2,7 @@
     <div>
         <nav id="findMusicNav">
             <ul>
-                <li v-for="findMusic in $store.state.findMusic">
+                <li v-for="findMusic in $store.state.findMusic" @click="click(findMusic)" :class="{'sonactive':findMusic.active}">
                     <router-link :to="findMusic.path">{{ findMusic.navName }}</router-link>
                 </li>
             </ul>
@@ -14,7 +14,12 @@
 <script>
     export default {
         name: "netEasyNav",
-        components:{}
+        components:{},
+        methods:{
+            click(a){
+                this.$store.commit("Sonclick",a)
+            }
+        }
     }
 </script>
 
@@ -34,6 +39,12 @@
         background-color: #c20d0a;
     }
     #findMusicNav li{
-        padding: 0 30px;
+        box-sizing: border-box;
+        border-radius: 15px;
+        padding: 5px 10px;
+        margin: 0 30px;
+    }
+    .sonactive{
+        background-color: #9B0909;
     }
 </style>

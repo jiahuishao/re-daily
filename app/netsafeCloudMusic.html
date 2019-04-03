@@ -8,8 +8,9 @@
 <div id="navContainer">
     <nav>
         <ul>
-            <li v-for="navList in $store.state.navList" class="ToneNav">
+            <li v-for="navList in $store.state.navList" class="ToneNav" :class="{'active':navList.active}" @click="click(navList)">
                 <router-link :to="navList.path">{{ navList.navName }}</router-link>
+                <div v-if="navList.active" class="icon"></div>
             </li>
             <input class="search" placeholder="音乐/视频/电台/用户">
             <button class="creater">创作者中心</button>

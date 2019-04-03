@@ -17,24 +17,47 @@ Vue.use(Vuex);
 const navStore = new Vuex.Store({
     state:{
         navList:[
-            {navName:'发现音乐',path:'/netEasyNav'},
-            {navName:'我的音乐',path:'/articleFilter'},
-            {navName:'朋友',path:'/animatePratice'},
-            {navName:'商城',path:'/animatePratice'},
-            {navName:'音乐人',path:'/animatePratice'},
-            {navName:'下载客户端',path:'/animatePratice'},
+            {navName:'发现音乐',path:'/netEasyNav',active:true},
+            {navName:'我的音乐',path:'/articleFilter',active:false},
+            {navName:'朋友',path:'/animatePratice',active:false},
+            {navName:'商城',path:'/animatePratice',active:false},
+            {navName:'音乐人',path:'/animatePratice',active:false},
+            {navName:'下载客户端',path:'/animatePratice',active:false},
         ],
         findMusic:[
-            {navName:'推荐',path:'/netEasyNav/netEasyFindMusicPush'},
-            {navName:'排行榜',path:''},
-            {navName:'歌单',path:''},
-            {navName:'主播电台',path:''},
-            {navName:'歌手',path:''},
-            {navName:'新碟上架',path:''},
-        ]
+            {navName:'推荐',path:'/netEasyNav/netEasyFindMusicPush',active:true},
+            {navName:'排行榜',path:'',active:false},
+            {navName:'歌单',path:'',active:false},
+            {navName:'主播电台',path:'',active:false},
+            {navName:'歌手',path:'',active:false},
+            {navName:'新碟上架',path:'',active:false},
+        ],
+        ablum:[
+            {ablumName:'2019已经过去¼ 你的目标完成的怎么样了？',imgSrc:require('../image/109951163935921247.jpeg'),listenTimes:2040000},
+            {ablumName:'2019已经过去¼ 你的目标完成的怎么样了？',imgSrc:require('../image/109951163935921247.jpeg'),listenTimes:2040000},
+            {ablumName:'2019已经过去¼ 你的目标完成的怎么样了？',imgSrc:require('../image/109951163935921247.jpeg'),listenTimes:2040000},
+            {ablumName:'2019已经过去¼ 你的目标完成的怎么样了？',imgSrc:require('../image/109951163935921247.jpeg'),listenTimes:2040000},
+            {ablumName:'Rapper情话|品尝一杯水果味甜蜜气泡',imgSrc:require('../image/109951163968036196.jpeg'),listenTimes:930000},
+            {ablumName:'Rapper情话|品尝一杯水果味甜蜜气泡',imgSrc:require('../image/109951163968036196.jpeg'),listenTimes:930000},
+            {ablumName:'Rapper情话|品尝一杯水果味甜蜜气泡',imgSrc:require('../image/109951163968036196.jpeg'),listenTimes:930000},
+            {ablumName:'Rapper情话|品尝一杯水果味甜蜜气泡',imgSrc:require('../image/109951163968036196.jpeg'),listenTimes:930000},
+        ],
+        ablumCover:require('../image/coverall.png'),
+        indexPng:require('../image/index.png'),
     },
     mutations:{
-
+        Faclick(state,a){
+            this.state.navList.forEach(a=>{
+                a.active = false
+            })
+            a.active = true
+        },
+        Sonclick(state,a){
+            this.state.findMusic.forEach(a=>{
+                a.active = false
+            })
+            a.active = true
+        }
     }
 })
 
@@ -62,7 +85,12 @@ const navContainer = new Vue({
     el:'#navContainer',
     store:navStore,
     router:router,
-    components:{netEasyNav}
+    components:{netEasyNav},
+    methods:{
+        click(a) {
+            this.$store.commit("Faclick",a)
+        }
+    }
 })
 
 router.push('/netEasyNav/netEasyFindMusicPush');
