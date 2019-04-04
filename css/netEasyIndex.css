@@ -14,6 +14,10 @@ a{
 nav{
     background-color: #232323;
 }
+.logo{
+    width: 180px;
+    height: 100%;
+}
 .search{
     width: 150px;
     height: 10px;
@@ -36,7 +40,7 @@ nav ul .ToneNav{
     line-height: 500%;
     border: 0px solid;
     text-align: center;
-    font-size: 14px;
+    font-size: .8em;
     padding: 0 20px;
 }
 .icon{

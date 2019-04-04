@@ -8,6 +8,8 @@
 <div id="navContainer">
     <nav>
         <ul>
+            <div class="logo"
+                 :style="{backgroundImage: 'url(' + $store.state.logoPng+ ')'}"></div>
             <li v-for="navList in $store.state.navList" class="ToneNav" :class="{'active':navList.active}" @click="click(navList)">
                 <router-link :to="navList.path">{{ navList.navName }}</router-link>
                 <div v-if="navList.active" class="icon"></div>

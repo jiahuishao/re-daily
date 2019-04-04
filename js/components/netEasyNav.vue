@@ -28,6 +28,7 @@
         width: 100%;
         height: 34px;
         background-color: #c20d0a;
+        z-index: 2;
     }
     #findMusicNav ul{
         width: 50%;
@@ -35,7 +36,7 @@
         margin:0 auto;
         display: flex;
         justify-content: center;
-        font-size: 12px;
+        font-size: .25em;
         background-color: #c20d0a;
     }
     #findMusicNav li{

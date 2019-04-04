@@ -17,7 +17,7 @@ Vue.use(Vuex);
 const navStore = new Vuex.Store({
     state:{
         navList:[
-            {navName:'发现音乐',path:'/netEasyNav',active:true},
+            {navName:'发现音乐',path:'/netEasyNav/netEasyFindMusicPush',active:true},
             {navName:'我的音乐',path:'/articleFilter',active:false},
             {navName:'朋友',path:'/animatePratice',active:false},
             {navName:'商城',path:'/animatePratice',active:false},
@@ -44,6 +44,13 @@ const navStore = new Vuex.Store({
         ],
         ablumCover:require('../image/coverall.png'),
         indexPng:require('../image/index.png'),
+        logoPng:require('../image/topbar.png'),
+        bannerPng:require('../image/banner.png'),
+        indexBannerImg:[
+            {imgSrc:require('../image/zhouRui.jpg'),imgSrcBackgroundColor:'#73a6da'},
+            {imgSrc:require('../image/jiangHu.jpg'),imgSrcBackgroundColor:'#707070'},
+            {imgSrc:require('../image/huaZhiQiXi.jpg'),imgSrcBackgroundColor:'#f0f0f2'},
+        ]
     },
     mutations:{
         Faclick(state,a){
@@ -74,7 +81,10 @@ const vuerouter = [
             {path:'netEasyFindMusicPush',component:netEasyFindMusicPush,}
         ]
     },
-    {path:'/articleFilter',component:articleFilter},
+    {
+        path:'/articleFilter',
+        component:articleFilter
+    },
 ];
 const router = new Vuerouter({
     routes:vuerouter
