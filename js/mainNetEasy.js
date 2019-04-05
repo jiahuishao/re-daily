@@ -42,6 +42,32 @@ const navStore = new Vuex.Store({
             {ablumName:'Rapper情话|品尝一杯水果味甜蜜气泡',imgSrc:require('../image/109951163968036196.jpeg'),listenTimes:930000},
             {ablumName:'Rapper情话|品尝一杯水果味甜蜜气泡',imgSrc:require('../image/109951163968036196.jpeg'),listenTimes:930000},
         ],
+        MusicAblum:[
+            {MusicAblumName:'Kills You Slowly',Singer:'The Chainsmokers',MusicAblumCoverImgSrc:require('../image/109951163955005483.jpeg')},
+            {MusicAblumName:'Kills You Slowly',Singer:'The Chainsmokers',MusicAblumCoverImgSrc:require('../image/109951163955005483.jpeg')},
+            {MusicAblumName:'Kills You Slowly',Singer:'The Chainsmokers',MusicAblumCoverImgSrc:require('../image/109951163955005483.jpeg')},
+            {MusicAblumName:'Kills You Slowly',Singer:'The Chainsmokers',MusicAblumCoverImgSrc:require('../image/109951163955005483.jpeg')},
+            {MusicAblumName:'Kills You Slowly',Singer:'The Chainsmokers',MusicAblumCoverImgSrc:require('../image/109951163955005483.jpeg')},
+        ],
+        Music:[
+            {MusicName:'绿色',MusicHeat:1000000,MusicPushTime:'2019-01-01',originSign:true},
+            {MusicName:'氧气舱',MusicHeat:900000,MusicPushTime:'2019-01-01',originSign:true},
+            {MusicName:'路过人间',MusicHeat:800000,MusicPushTime:'2019-01-01',originSign:false},
+            {MusicName:'亦是此间少年',MusicHeat:700000,MusicPushTime:'2019-01-01',originSign:true},
+            {MusicName:'出山',MusicHeat:600000,MusicPushTime:'2019-01-21',originSign:false},
+            {MusicName:'关于孤独我想说的话',MusicHeat:500000,MusicPushTime:'2019-01-11',originSign:false},
+            {MusicName:'伪装',MusicHeat:400000,MusicPushTime:'2019-01-23',originSign:true},
+            {MusicName:'一个人的城市',MusicHeat:300000,MusicPushTime:'2019-01-01',originSign:true},
+            {MusicName:'I‘M YOURS PT.2',MusicHeat:200000,MusicPushTime:'2019-01-23',originSign:false},
+            {MusicName:'你的酒馆对我打了烊',MusicHeat:100000,MusicPushTime:'2019-01-22',originSign:true},
+            {MusicName:'多选在平庸的生活拥抱你',MusicHeat:100000,MusicPushTime:'2019-01-21',originSign:false},
+            {MusicName:'Kills You Slowly',MusicHeat:100000,MusicPushTime:'2019-01-10',originSign:true},
+            {MusicName:'形容',MusicHeat:100000,MusicPushTime:'2019-01-03',originSign:true},
+            {MusicName:'我愿平凡的陪在你身边',MusicHeat:100000,MusicPushTime:'2019-01-07',originSign:false},
+            {MusicName:'去见你',MusicHeat:100000,MusicPushTime:'2019-01-08',originSign:true},
+            {MusicName:'桥下',MusicHeat:100000,MusicPushTime:'2019-01-06',originSign:true},
+            {MusicName:'今天也想见到你',MusicHeat:100000,MusicPushTime:'2019-02-04',originSign:true},
+        ],
         ablumCover:require('../image/coverall.png'),
         indexPng:require('../image/index.png'),
         logoPng:require('../image/topbar.png'),
@@ -50,7 +76,12 @@ const navStore = new Vuex.Store({
             {imgSrc:require('../image/zhouRui.jpg'),imgSrcBackgroundColor:'#73a6da'},
             {imgSrc:require('../image/jiangHu.jpg'),imgSrcBackgroundColor:'#707070'},
             {imgSrc:require('../image/huaZhiQiXi.jpg'),imgSrcBackgroundColor:'#f0f0f2'},
-        ]
+        ],
+        imgGroup:{
+            newJpeg:require('../image/new.jpeg'),
+            originJpeg:require('../image/origin.jpeg'),
+            upJpeg:require('../image/up.jpeg'),
+        }
     },
     mutations:{
         Faclick(state,a){

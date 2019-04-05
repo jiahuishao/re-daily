@@ -52,7 +52,19 @@
                         <span>新碟上架</span>
                     </div>
                     <div class="newPushBody">
-                        <div class="newPushContainer"></div>
+                        <div class="newPushContainer">
+                            <div v-for="musicAblum in $store.state.MusicAblum" class="newPushBlock">
+                                <div class="musicAblumCover"
+                                     :style="{backgroundImage: 'url(' + musicAblum.MusicAblumCoverImgSrc + ')'}">
+                                    <div class="newPushAblumCover"
+                                         :style="{backgroundImage: 'url(' + $store.state.ablumCover + ')'}">
+
+                                    </div>
+                                </div>
+                                <div class="musicAblumName">{{ musicAblum.MusicAblumName }}</div>
+                                <div class="musicAblumSinger">{{ musicAblum.Singer }}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="board">
@@ -63,7 +75,47 @@
                         <span>榜单</span>
                     </div>
                     <div class="boardBody">
-                        <div class="boardContainer"></div>
+                        <div class="boardContainer">
+                            <div class="couldMusicUpBoard zebra">
+                                <div class="couldMusicBoardHeader">
+                                    <div :style="{backgroundImage: 'url(' + $store.state.imgGroup.upJpeg + ')'}">
+                                        <div class="cover" :style="{backgroundImage: 'url(' + $store.state.ablumCover + ')'}">
+                                        </div>
+                                    </div>
+                                    <span class="Header">云音乐飙升榜</span>
+                                </div>
+                                <div v-for="(couldMusicBoard,index) in couldMusicUpBoard">
+                                    {{ index+1 }} {{ couldMusicBoard.MusicName }}
+                                </div>
+                                <div class="couldMusicBoardFooter">查看全部 > </div>
+                            </div>
+                            <div class="couldMusicNewBoard zebra">
+                                <div class="couldMusicBoardHeader">
+                                    <div :style="{backgroundImage: 'url(' + $store.state.imgGroup.newJpeg + ')'}">
+                                        <div class="cover" :style="{backgroundImage: 'url(' + $store.state.ablumCover + ')'}">
+                                        </div>
+                                    </div>
+                                    <span class="Header">云音乐新歌榜</span>
+                                </div>
+                                <div v-for="(couldMusicNewBoard,index) in couldMusicNewBoard">
+                                    {{ index+1 }} {{ couldMusicNewBoard.MusicName }}
+                                </div>
+                                <div class="couldMusicBoardFooter">查看全部 > </div>
+                            </div>
+                            <div class="couldMusicOriginalBoard zebra">
+                                <div class="couldMusicBoardHeader">
+                                    <div :style="{backgroundImage: 'url(' + $store.state.imgGroup.originJpeg + ')'}">
+                                        <div class="cover" :style="{backgroundImage: 'url(' + $store.state.ablumCover + ')'}">
+                                        </div>
+                                    </div>
+                                    <span class="Header">网易原创歌曲榜</span>
+                                </div>
+                                <div v-for="(couldMusicOriginalBoard,index) in couldMusicOriginalBoard">
+                                    {{ index+1 }} {{ couldMusicOriginalBoard.MusicName }}
+                                </div>
+                                <div class="couldMusicBoardFooter">查看全部 > </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,9 +136,60 @@
         data(){
             return {
                 indexBannerImgIndex: 0,
+                couldMusicUpBoard:[],
+                couldMusicNewBoard:[],
+                couldMusicOriginalBoard:[],
             }
         },
         methods:{
+            //对对象进行排序，property为排序属性名，rev降序或升序
+            compare(property,rev){
+                if(rev ==  undefined){
+                    rev = 1;
+                }else{
+                    rev = (rev) ? 1 : -1;
+                }
+                return function (a,b) {
+                    a = a[property];
+                    b = b[property];
+                    if(a < b){
+                        return rev * -1;
+                    }
+                    if(a > b){
+                        return rev * 1;
+                    }
+                    return 0;
+                }
+            },
+
+            getCouldMusicOriginalBoard(){
+                const Music = this.$store.state.Music;
+                Music.forEach(a=>{
+                    if(a.originSign){
+                        this.couldMusicOriginalBoard.push(a);
+                    }
+                })
+                this.couldMusicOriginalBoard.sort(this.compare('MusicHeat',false));
+                this.couldMusicOriginalBoard = this.couldMusicOriginalBoard.slice(0,10);
+            },
+
+            getCouldMusicNewBoard(){
+                const Music = this.$store.state.Music;
+                Music.forEach(a=>{
+                    if(a.MusicPushTime > '2019-01-01'){
+                        this.couldMusicNewBoard.push(a);
+                    }
+                })
+                this.couldMusicNewBoard.sort(this.compare('MusicHeat',false));
+                this.couldMusicNewBoard = this.couldMusicNewBoard.slice(0,10);
+            },
+
+            getCouldMusicUpBoard(){
+                const Music = this.$store.state.Music;
+                Music.sort(this.compare('MusicHeat',false));
+                this.couldMusicUpBoard = Music.slice(0,10);
+            },
+
             row(){
                 const imgGroup = this.$store.state.indexBannerImg;
                 setInterval(a=>{
@@ -97,6 +200,7 @@
                     this.indexBannerImgIndex + 1 > 2 ? this.indexBannerImgIndex = 0 : this.indexBannerImgIndex ++;
                 },3000)
             },
+
             topBannerImgSub(){
                 const imgGroupSub = this.$store.state.indexBannerImg;
                 this.indexBannerImgIndex - 1 < 0 ? this.indexBannerImgIndex = 2 : this.indexBannerImgIndex -= 1;
@@ -106,6 +210,7 @@
                 document.getElementById('topBanner')
                     .style.backgroundColor = imgGroupSub[this.indexBannerImgIndex].imgSrcBackgroundColor;
             },
+
             topBannerImgPlus() {
                 const imgGroupPlus = this.$store.state.indexBannerImg;
                 this.indexBannerImgIndex + 1 > 2 ? this.indexBannerImgIndex = 0 : this.indexBannerImgIndex += 1;
@@ -115,8 +220,12 @@
                     .style.backgroundColor = imgGroupPlus[this.indexBannerImgIndex].imgSrcBackgroundColor;
             }
         },
+
         mounted() {
             this.row();
+            this.getCouldMusicUpBoard();
+            this.getCouldMusicNewBoard();
+            this.getCouldMusicOriginalBoard()
         }
     }
 </script>
@@ -193,9 +302,10 @@
     }
     #main{
         margin: 0 auto;
+        padding-bottom: 20px;
         width: 60%;
         display: flex;
-        height: 1400px;
+        height: auto;
         background: #fff;
         z-index: -1;
         border: 1px solid #d3d3d3;
@@ -326,10 +436,18 @@
         padding: 30px 0;
     }
     .newPushContainer{
+        box-sizing: border-box;
+        padding: 25px 10px;
         width: 100%;
         height: 184px;
         background-color: #f5f5f5;
         border: 1px solid #d3d3d3;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .newPushBlock:not(:first-child){
+        margin-left: 20px;
     }
     .boardBody{
         width: 100%;
@@ -338,8 +456,83 @@
     }
     .boardContainer{
         width: 100%;
-        height: 470px;
+        height: auto;
         background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+    }
+    .musicAblumCover{
+        box-sizing: border-box;
+        width: 115px;
+        height: 100px;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .newPushAblumCover{
+        position: absolute;
+        background-position: 0 -570px;
+        width: 100%;
+        height: 100%;
+    }
+    .musicAblumName{
+        font-size: 12px;
+    }
+    .musicAblumSinger{
+        font-size: 10px;
+        color: gray;
+    }
+    .zebra:first-child{
+        width: 33%;
+        height: 100%;
         border: 1px solid #d3d3d3;
     }
+    .zebra{
+        width: 33%;
+        height: 100%;
+        border-right: 1px solid #d3d3d3;
+        border-top: 1px solid #d3d3d3;
+        border-bottom: 1px solid #d3d3d3;
+    }
+    .couldMusicBoardHeader{
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        padding: 30px;
+        display: flex;
+    }
+    .couldMusicBoardHeader > div{
+        width: 80px;
+        height: 80px;
+        background-size: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .cover{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-position: -145px -57px;
+    }
+    .Header{
+        width: 45%;
+        font-size: 12px;
+        margin-left: 10px;
+        white-space: nowrap;
+    }
+    .couldMusicBoardFooter{
+        box-sizing: border-box;
+        width: 100%;
+        text-align: right;
+    }
+    .zebra>div:not(:first-child){
+        padding: 8px 30px;
+        font-size: 12px;
+    }
+    .zebra>div:nth-of-type(odd){
+        background-color: #f4f4f4;
+    }
+    .zebra>div:nth-of-type(even){
+        background-color: #e8e8e8;
+    }
+
 </style>
