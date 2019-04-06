@@ -38,7 +38,7 @@
                             <div class="ablumImgContainer">
                                 <img :src="ablum.imgSrc" class="ablumImg">
                                 <img :src="$store.state.ablumCover" class="ablumCover">
-                                <div class="listenTimes">{{ ablum.listenTimes }}</div>
+                                <div class="listenTimes">{{ ablum.listenTimes | capitalize }}</div>
                             </div>
                             <div class="ablumName">{{ ablum.ablumName }}</div>
                         </div>
@@ -124,7 +124,40 @@
                     <p>登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机</p>
                     <button class="userLogin">用户登录</button>
                 </div>
-                <div class="singer"></div>
+                <div class="singer">
+                    <div class="singerHeader">
+                        <div>入驻歌手</div>
+                        <div>查看全部 ></div>
+                    </div>
+                    <hr>
+                    <div class="singerList">
+                        <div class="singerBlock" v-for="singer in $store.state.singerList">
+                            <div class="singerImg">
+                                <img :src="singer.singerImg">
+                            </div>
+                            <div class="singerTxt">
+                                <div class="singerName">{{ singer.singerName }}</div>
+                                <div class="singerSummary">{{ singer.singerSummary }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="applyBecomeSingerBtn">申请成为网易音乐人</button>
+                    <div class="anchorHeader">
+                        <div>热门主播</div>
+                    </div>
+                    <hr>
+                    <div class="anchorList">
+                        <div class="anchorBlock" v-for="anchor in $store.state.anchorList">
+                            <div class="anchorImg">
+                                <img :src="anchor.anchorImg">
+                            </div>
+                            <div class="anchorTxt">
+                                <div class="anchorName">{{ anchor.anchorName }}</div>
+                                <div class="anchorSummary">{{ anchor.anchorSummary }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -221,6 +254,12 @@
             }
         },
 
+        filters:{
+            capitalize:function(value){
+                return value/10000 + '万'
+            }
+        },
+
         mounted() {
             this.row();
             this.getCouldMusicUpBoard();
@@ -302,7 +341,6 @@
     }
     #main{
         margin: 0 auto;
-        padding-bottom: 20px;
         width: 60%;
         display: flex;
         height: auto;
@@ -316,8 +354,9 @@
         padding: 20px;
     }
     #rightPart{
+        position: relative;
         width: 25%;
-        background-color: darkcyan;
+        height: auto;
     }
     #hotPush,#newPush,#board{
         padding: 10px;
@@ -393,6 +432,7 @@
         bottom: 0;
         color: #fff;
         background-color: rgba(35,35,35,0.8);
+        font-size: 12px;
     }
     .ablumCover{
         position: absolute;
@@ -425,10 +465,37 @@
         outline: none;
     }
     .singer{
+        box-sizing: border-box;
+        position: absolute;
+        top: 120px;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        height: 1280px;
+        padding: 20px;
         border: 1px solid #d3d3d3;
         background-color: #ffffff;
+    }
+    .singerHeader,.anchorHeader{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+    }
+    .singerHeader>div:first-child{
+        font-weight: bold;
+    }
+    .singerHeader>div:last-child{
+        color: gray;
+    }
+    .applyBecomeSingerBtn{
+        box-sizing: border-box;
+        outline: none;
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 4px;
+        background: linear-gradient(to bottom,#fefefe,#f2f2f2);
     }
     .newPushBody{
         width: 100%;
@@ -504,6 +571,7 @@
         width: 80px;
         height: 80px;
         background-size: 100%;
+        background-repeat: no-repeat;
         position: relative;
         overflow: hidden;
     }
@@ -515,7 +583,7 @@
     }
     .Header{
         width: 45%;
-        font-size: 12px;
+        font-size: .5em;
         margin-left: 10px;
         white-space: nowrap;
     }
@@ -526,7 +594,7 @@
     }
     .zebra>div:not(:first-child){
         padding: 8px 30px;
-        font-size: 12px;
+        font-size: .5em;
     }
     .zebra>div:nth-of-type(odd){
         background-color: #f4f4f4;
@@ -534,5 +602,57 @@
     .zebra>div:nth-of-type(even){
         background-color: #e8e8e8;
     }
-
+    .singerBlock{
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        border: 1px solid #d3d3d3;
+    }
+    .anchorBlock{
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+    }
+    .singerImg{
+        width: 62px;
+        height: 62px;
+    }
+    .anchorImg{
+        width: 40px;
+        height: 40px;
+    }
+    .singerTxt{
+        box-sizing: border-box;
+        padding: 5px;
+        height: 100%;
+    }
+    .anchorTxt{
+        box-sizing: border-box;
+        padding-left: 10px;
+        height: 100%;
+    }
+    .singerName{
+        font-size: 14px;
+    }
+    .anchorName{
+        font-size: 10px;
+    }
+    .singerSummary{
+        width: 100px;
+        margin-top: 10px;
+        font-size: 12px;
+        white-space: nowrap;
+        color: gray;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .anchorSummary{
+        width: 150px;
+        margin-top: 2px;
+        font-size: 10px;
+        white-space: nowrap;
+        color: gray;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 </style>

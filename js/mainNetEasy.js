@@ -7,6 +7,7 @@ import netEasyNav from '../js/components/netEasyNav.vue'
 import animatePratice from "../js/components/animatePratice.vue";
 import articleFilter from "../js/components/articleFilter.vue";
 import netEasyFindMusicPush from '../js/components/netEasyFindMusicPush.vue';
+import netEasyFindMusicList from '../js/components/netEasyFindMusicList.vue';
 
 import '../css/netEasyIndex.css'
 
@@ -27,7 +28,7 @@ const navStore = new Vuex.Store({
         findMusic:[
             {navName:'推荐',path:'/netEasyNav/netEasyFindMusicPush',active:true},
             {navName:'排行榜',path:'',active:false},
-            {navName:'歌单',path:'',active:false},
+            {navName:'歌单',path:'/netEasyNav/netEasyFindMusicList',active:false},
             {navName:'主播电台',path:'',active:false},
             {navName:'歌手',path:'',active:false},
             {navName:'新碟上架',path:'',active:false},
@@ -67,6 +68,30 @@ const navStore = new Vuex.Store({
             {MusicName:'去见你',MusicHeat:100000,MusicPushTime:'2019-01-08',originSign:true},
             {MusicName:'桥下',MusicHeat:100000,MusicPushTime:'2019-01-06',originSign:true},
             {MusicName:'今天也想见到你',MusicHeat:100000,MusicPushTime:'2019-02-04',originSign:true},
+        ],
+        singerList:[
+            {singerName:'张惠妹aMEI',singerSummary:'台湾歌手张惠妹台湾歌手张惠妹',singerImg:require('../image/aMEI.jpeg')},
+            {singerName:'张惠妹aMEI',singerSummary:'台湾歌手张惠妹',singerImg:require('../image/aMEI.jpeg')},
+            {singerName:'张惠妹aMEI',singerSummary:'台湾歌手张惠妹',singerImg:require('../image/aMEI.jpeg')},
+            {singerName:'张惠妹aMEI',singerSummary:'台湾歌手张惠妹台湾歌手张惠妹',singerImg:require('../image/aMEI.jpeg')},
+        ],
+        anchorList:[
+            {anchorName:'陈立',anchorSummary:'心理学家、美食家陈立教授',anchorImg:require('../image/1407374893913311.jpeg')},
+            {anchorName:'陈立',anchorSummary:'心理学家、美食家陈立教授',anchorImg:require('../image/1407374893913311.jpeg')},
+            {anchorName:'陈立',anchorSummary:'心理学家、美食家陈立教授',anchorImg:require('../image/1407374893913311.jpeg')},
+            {anchorName:'陈立',anchorSummary:'心理学家、美食家陈立教授',anchorImg:require('../image/1407374893913311.jpeg')},
+        ],
+        songSheet:[
+            {songSheetName: '50句告白密语 | 我和你是一支唱不倦的情歌',songSheetHeat:100000,songSheetImg: require('../image/as1x01.jpeg'),songSheetSongList:[]},
+            {songSheetName: '50句告白密语 | 我和你是一支唱不倦的情歌',songSheetHeat:100000,songSheetImg: require('../image/as1x01.jpeg'),songSheetSongList:[]},
+            {songSheetName: '欧美抒情｜因为有你，人生苦短甜长',songSheetHeat:100000,songSheetImg: require('../image/as0x02.jpeg'),songSheetSongList:[]},
+            {songSheetName: '欧美抒情｜因为有你，人生苦短甜长',songSheetHeat:100000,songSheetImg: require('../image/as0x02.jpeg'),songSheetSongList:[]},
+            {songSheetName: '环境音衬底°满船清梦压星河',songSheetHeat:100000,songSheetImg: require('../image/as0x03.jpeg'),songSheetSongList:[]},
+            {songSheetName: '环境音衬底°满船清梦压星河',songSheetHeat:100000,songSheetImg: require('../image/as0x03.jpeg'),songSheetSongList:[]},
+            {songSheetName: '况是清明好天气，不妨游衍莫忘归',songSheetHeat:100000,songSheetImg: require('../image/as0x04.jpeg'),songSheetSongList:[]},
+            {songSheetName: '况是清明好天气，不妨游衍莫忘归',songSheetHeat:100000,songSheetImg: require('../image/as0x04.jpeg'),songSheetSongList:[]},
+            {songSheetName: 'Future Bass丨沉醉于绝伦幻美的律动',songSheetHeat:100000,songSheetImg: require('../image/as0x05.jpeg'),songSheetSongList:[]},
+            {songSheetName: 'Future Bass丨沉醉于绝伦幻美的律动',songSheetHeat:100000,songSheetImg: require('../image/as0x05.jpeg'),songSheetSongList:[]},
         ],
         ablumCover:require('../image/coverall.png'),
         indexPng:require('../image/index.png'),
@@ -109,7 +134,8 @@ const vuerouter = [
         path:'/netEasyNav',
         component:netEasyNav,
         children:[
-            {path:'netEasyFindMusicPush',component:netEasyFindMusicPush,}
+            {path:'netEasyFindMusicPush',component:netEasyFindMusicPush,},
+            {path:'netEasyFindMusicList',component:netEasyFindMusicList,}
         ]
     },
     {
