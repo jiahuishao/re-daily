@@ -15,6 +15,7 @@
                 <div class="songSheetAnthor">by  {{ songSheet.songSheetAnthor }}</div>
             </div>
         </div>
+        <div class="kindList">aaaa</div>
         <div class="page">
             <ul class="pageGroup">
                 <li class="pageBlock" @click="pageIndex--;filterSongSheet();"> < </li>
@@ -71,6 +72,7 @@
         background-color: #ffffff;
         border: 1px solid #d3d3d3;
         padding: 40px;
+        position: relative;
     }
     .header{
         box-sizing: border-box;
@@ -98,6 +100,16 @@
         border-radius: 5px;
         font-size: 12px;
         cursor: pointer;
+    }
+    .kindList{
+        width: 300px;
+        height: 400px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: cornflowerblue;
+        z-index: 9;
     }
     .hot,.lastest{
         outline: none;
@@ -128,6 +140,7 @@
         align-content: flex-start;
         align-items: flex-start;
         justify-content: space-evenly;
+        z-index: -1;
     }
     .songSheetBlock{
         box-sizing: border-box;

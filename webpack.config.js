@@ -15,6 +15,7 @@ module.exports = {
         mainVueRouter:__dirname + "/js/vueRouter.js",
         mainVuex:__dirname + "/js/vuex.js",
         mainNetEasy:__dirname + "/js/mainNetEasy.js",
+        mainClosure:__dirname + "/js/mainClosure.js",
     },
     output: {                           //出口文件
         path: __dirname + "/app",

@@ -44,7 +44,12 @@ var leftNav = new Vue({
                 sonNum:1,
                 src:'animatePratice.html',
                 click:false
-            }
+            },{
+                name:'闭包学习',
+                sonNum:1,
+                src:'closureStudy.html',
+                click:false
+            },
         ],
         active:1
     },
