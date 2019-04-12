@@ -61,8 +61,6 @@ for(var i = 0;i < 5;i++){
     men.push(new man(i));
 }
 
-console.log(men);
-
 var output = $(".output");
 var html = "";
 html += '<div>';
@@ -72,4 +70,47 @@ for(let a = 0;a < 5;a ++){
 html += '</div>';
 output.html(html);
 
-console.log($('.output'));
+function test(b) {
+    var p = new Promise(function (resolve,reject) {
+        var a = b;
+        if(a != -1){
+            console.log("111");
+            resolve(a)
+        }else if(a == -1){
+            console.log("222");
+            reject("aaa");
+        }
+    });
+    return p;
+}
+
+function test2(b) {
+    var p = new Promise(function (resolve,reject) {
+        var a = b;
+        if(a != -1){
+            resolve(a)
+        }else if(a == -1){
+            reject("aaa");
+        }
+    });
+    return p;
+}
+
+
+// test(-1).then(
+//     function (data) {
+//         console.log(data);
+//     },
+//     function (reason,data) {
+//         console.log(reason);
+//     })
+
+Promise.all([test(1),test2(2)]).then(
+    function (data) {
+        console.log(data);
+    },
+    function (reason,data) {
+        console.log(reason);
+        console.log(data);
+    }
+)
