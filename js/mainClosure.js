@@ -114,3 +114,54 @@ Promise.all([test(1),test2(2)]).then(
         console.log(data);
     }
 )
+
+function chongQin(username,date,planeNum) {
+    this.userName = username;
+    this.date = date;
+    this.PlaneNum = planeNum;
+}
+
+var plane = [
+    {planeName:'南航',planeN:'NH1000',planeNum:1000},
+]
+
+function getPlane(username,date,planeNum) {
+    var cache =new chongQin(username,date,planeNum);
+    plane.forEach(a=>{
+        if(cache.PlaneNum = a.planeNum){
+            cache.property = a;
+        }
+    })
+    return cache;
+}
+
+console.log(getPlane('邵嘉辉','20190418',1000).property.planeNum);
+
+function planeGo() {
+    var flow = new Promise((resolve,reject)=>{
+        var go = true;
+        if(go){
+            console.log('起飞');
+            resolve('go');
+        }else{
+            console.log('延误');
+            reject('error');
+        }
+    })
+    return flow;
+}
+
+function planeLand() {
+    var land = new Promise((resolve, reject)=>{
+
+    })
+}
+
+for(var i = 0;i < 5;i ++){
+    ((j)=>{
+        setTimeout(()=>{
+            console.log(j)
+        },0)
+    })(i)
+}
+

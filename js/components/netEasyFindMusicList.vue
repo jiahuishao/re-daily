@@ -15,7 +15,6 @@
                 <div class="songSheetAnthor">by  {{ songSheet.songSheetAnthor }}</div>
             </div>
         </div>
-        <div class="kindList">aaaa</div>
         <div class="page">
             <ul class="pageGroup">
                 <li class="pageBlock" @click="pageIndex--;filterSongSheet();"> < </li>

@@ -49,6 +49,11 @@ var leftNav = new Vue({
                 sonNum:1,
                 src:'closureStudy.html',
                 click:false
+            },{
+                name:'日程表',
+                sonNum:1,
+                src:'dailyTable.html',
+                click:false
             },
         ],
         active:1
