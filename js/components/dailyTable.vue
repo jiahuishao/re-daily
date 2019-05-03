@@ -19,10 +19,10 @@
         data() {
             return {
                 day:[
-                    {date:"2019-01-02"},
-                    {date:"2019-01-03"},
-                    {date:"2019-01-04"},
-                    {date:"2019-01-05"},
+                    {date:"2019-01-02",prots:0},
+                    {date:"2019-01-03",prots:0},
+                    {date:"2019-01-04",prots:0},
+                    {date:"2019-01-05",prots:0},
                 ],
                 showDate:[
 
@@ -52,11 +52,9 @@
                     })
                 },500);
                 this.freak.forEach(c=>{
-                    console.log(b)
-                    console.log(c.data);
                     if(c.data == b){
                         this.showDate.push(c);
-                    }
+                }
                 })
             },
             close(){
@@ -65,7 +63,31 @@
                 })
                 $(".dayBlock").removeClass("ani");
                 this.showDate = [];
+            },
+            countNum(){
+                this.day.forEach(a=>{
+                    this.freak.forEach(b=>{
+                        if(a.date == b.data){
+                            a.prots += 1;
+                        }
+                    })
+                })
             }
+        },
+        mounted(){
+            this.countNum();
+            var prots = this.day[0].prots
+            var appendStr = "<style>.dayBlock:nth-child(even):before{" +
+                "        content: \"\";\n" +
+                "        position: absolute;\n" +
+                "        top: 0;\n" +
+                "        right: 100px;\n" +
+                "        width: 100px;\n" +
+                "        height: 100%;\n" +
+                // "        background-color: #b5c0d6;\n" +
+                "        text-align: center;\n" +
+                "        line-height: 300%;}</style>";
+            $(".dayBlock:nth-child(even)").append(appendStr);
         }
     }
 </script>
@@ -98,25 +120,21 @@
         border-radius: 100%;
     }
     .ani{
-        animation: big 1s;
+        animation: big .75s;
     }
     .dayBlock:nth-child(odd):before{
-        content: "";
+        content: "aaa";
         position: absolute;
         top: 0;
         left: 100px;
         width: 100px;
         height: 100%;
-        /*background-color: #333333;*/
+        background-color: #b5c0d6;
+        text-align: center;
+        vertical-align: middle;
     }
     .dayBlock:nth-child(even):before{
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 100px;
-        width: 100px;
-        height: 100%;
-        /*background-color: #333333;*/
+
     }
     @keyframes big {
         0% {transform: scale(1)}
